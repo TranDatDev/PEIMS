@@ -1,5 +1,4 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Sidebar() {
     return (
@@ -7,10 +6,14 @@ function Sidebar() {
             <div className="sidebar">
                 <ul>
                     <li>
-                        <Link to="/customer/personal-account">Tài khoản cá nhân</Link>
+                        <Link to="/customer/personal-account">
+                            Tài khoản cá nhân
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/customer/categories">Danh mục chức năng</Link>
+                        <Link to="/customer/categories">
+                            Danh mục chức năng
+                        </Link>
                     </li>
                     <li>
                         <Link to="/customer/finances">Giao dịch</Link>

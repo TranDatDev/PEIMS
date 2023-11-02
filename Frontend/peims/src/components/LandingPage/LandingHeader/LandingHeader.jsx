@@ -2,25 +2,36 @@ import { Link } from "react-router-dom";
 import "./LandingHeader.scss";
 import home from "../../../assets/home.png";
 import utils from "../../../assets/utils.png";
+import DarkLogo from "../../../assets/DarkPeims.svg";
+import LightLogo from "../../../assets/LightPeims.svg";
 const LandingHeader = () => {
     return (
         <>
             <div className="landing__header__container">
                 <header>
-                    <section>
-                        <img src="" alt="" />
+                    <section className="landing__logo__title">
+                        <img
+                            src={LightLogo}
+                            alt=""
+                            className="landing__logo is__light"
+                        />
+                        <img
+                            src={DarkLogo}
+                            alt=""
+                            className="landing__logo is__dark"
+                        />
                         <p className="landing__logo__title is__desktop">
-                            aaaaa
+                            PEIMS
                         </p>
                     </section>
                     <nav className="landing__nav--mobile is__mobile">
-                        <Link to="">
+                        <Link to="/">
                             <img src={home} alt="a" />
                         </Link>
-                        <Link to="">
+                        <Link to="/info">
                             <img src={utils} alt="b" />
                         </Link>
-                        <Link to="">
+                        <Link to="/ultis">
                             <img src="" alt="c" />
                         </Link>
                         <div className="landing__login--btn">
@@ -30,13 +41,13 @@ const LandingHeader = () => {
                     <nav className="landing__nav--desktop is__desktop">
                         <ul>
                             <li>
-                                <Link to="">Trang chủ</Link>
+                                <Link to="/">Trang chủ</Link>
                             </li>
                             <li>
-                                <Link to="">Thông tin</Link>
+                                <Link to="/info">Thông tin</Link>
                             </li>
                             <li>
-                                <Link to="">Chức năng</Link>
+                                <Link to="/ultis">Chức năng</Link>
                             </li>
                         </ul>
                         <div className="landing__login--btn">

@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import classnames from "classnames";
 import { useState } from "react";
 import LandingHeader from "./components/LandingPage/LandingHeader/LandingHeader";
+import LandingPage from "./components/LandingPage/LandingPage";
 function App() {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -25,7 +26,7 @@ function App() {
                         isDarkMode ? "dark-mode" : "light-mode"
                     )}
                 >
-                    <LandingHeader />
+                    <LandingPage />
                     <button onClick={toggleDarkMode}>
                         {isDarkMode ? "Light mode" : "Dark mode"}
                     </button>
