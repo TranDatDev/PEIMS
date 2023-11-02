@@ -1,0 +1,36 @@
+@mixin fcc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.personal__account__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 800px;
+    overflow-y: scroll;
+    position: relative;
+}
+.personal__account__container::-webkit-scrollbar {
+    display: none;
+}
+.personal__account__title {
+    font-size: 16px;
+    position: sticky;
+}
+.personal__account__content {
+    margin: 1rem 0 1rem 0;
+    background-color: #eee;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: minmax(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    div {
+        @include fcc();
+        transition: background-color 0.2s ease, color 0.1s ease;
+        background-color: var(--background-color);
+        border-radius: 10px;
+        height: 300px;
+    }
+}
