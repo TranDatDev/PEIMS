@@ -11,26 +11,29 @@ import classnames from "classnames";
 import { useState } from "react";
 import LandingHeader from "./components/LandingPage/LandingHeader/LandingHeader";
 import LandingPage from "./components/LandingPage/LandingPage";
+import sun from "./assets/sun-regular.svg";
+import moon from "./assets/moon-regular.svg";
+import DarkModeButton from "./components/DarkModeButton";
 function App() {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+   const [isDarkMode, setIsDarkMode] = useState(false);
 
-    const toggleDarkMode = () => {
-        setIsDarkMode(!isDarkMode);
-    };
-    return (
-        <>
-            <Router>
-                <div
-                    className={classnames(
-                        "app__container",
-                        isDarkMode ? "dark-mode" : "light-mode"
-                    )}
-                >
-                    <LandingPage />
-                    <button onClick={toggleDarkMode}>
-                        {isDarkMode ? "Light mode" : "Dark mode"}
-                    </button>
-                    {/* <div className="app__sidebar">
+   const toggleDarkMode = () => {
+      setIsDarkMode(!isDarkMode);
+   };
+   return (
+      <>
+         <Router>
+            <div
+               className={classnames(
+                  "app__container",
+                  isDarkMode ? "dark-mode" : "light-mode"
+               )}
+            >
+               <LandingPage
+                  isDarkMode={isDarkMode}
+                  toggleDarkMode={toggleDarkMode}
+               />
+               {/* <div className="app__sidebar">
                         <div className="app__sidebar__container">
                             {mainListItems}
                         </div>
@@ -63,9 +66,9 @@ function App() {
                             />
                         </Routes>
                     </div> */}
-                </div>
-            </Router>
-        </>
-    );
+            </div>
+         </Router>
+      </>
+   );
 }
 export default App;
