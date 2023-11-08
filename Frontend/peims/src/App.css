@@ -1,100 +1,143 @@
+/** Global Settings */
 :root {
-   font-family: "Inter", sans-serif;
-   --background-body-dark: #1e1e1e;
-   --background-body-light: #ededed;
-   --background-color-dark: #0f0f0f;
-   --background-color-light: #ebebeb;
-   --font-color-dark: #000;
-   --font-color-light: #fff;
-   --img-invert--dark: 5%;
-   --img-invert--light: 95%;
-   --background-color-dark-1000: #000;
-   --background-color-dark-900: #080808;
-   --background-color-dark-800: #0f0f0f;
-   --background-color-dark-700: #171717;
-   --background-color-dark-600: #1f1f1f;
-   --background-color-dark-500: #262626;
-   --background-color-dark-400: #2e2e2e;
-   --background-color-dark-300: #363636;
-   --background-color-dark-200: #3d3d3d;
-   --background-color-dark-100: #454545;
-   --background-color-dark-000: #4d4d4d;
-   --background-color-light-1000: #fcfcfc;
-   --background-color-light-900: #f5f5f5;
-   --background-color-light-800: #ededed;
-   --background-color-light-700: #e6e6e6;
-   --background-color-light-600: #dedede;
-   --background-color-light-500: #d6d6d6;
-   --background-color-light-400: #cfcfcf;
-   --background-color-light-300: #c7c7c7;
-   --background-color-light-200: #bfbfbf;
-   --background-color-light-100: #b8b8b8;
-   --background-color-light-000: #b0b0b0;
+    font-family: "Inter", sans-serif;
+    --background-body-dark: #1e1e1e;
+    --background-body-light: #ededed;
+    --background-color-dark: #0f0f0f;
+    --background-color-light: #ebebeb;
+    --background-color-dark-inverted: #ebebeb;
+    --background-color-light-inverted: #0f0f0f;
+    --font-color-dark: #000;
+    --font-color-light: #fff;
+    --font-color-dark-inverted: #fff;
+    --font-color-light-inverted: #000;
+    --img-invert--dark: 5%;
+    --img-invert--light: 95%;
+    --background-color-dark-1000: #000;
+    --background-color-dark-900: #080808;
+    --background-color-dark-800: #0f0f0f;
+    --background-color-dark-700: #171717;
+    --background-color-dark-600: #1f1f1f;
+    --background-color-dark-500: #262626;
+    --background-color-dark-400: #2e2e2e;
+    --background-color-dark-300: #363636;
+    --background-color-dark-200: #3d3d3d;
+    --background-color-dark-100: #454545;
+    --background-color-dark-000: #4d4d4d;
+    --background-color-light-1000: #fcfcfc;
+    --background-color-light-900: #f5f5f5;
+    --background-color-light-800: #ededed;
+    --background-color-light-700: #e6e6e6;
+    --background-color-light-600: #dedede;
+    --background-color-light-500: #d6d6d6;
+    --background-color-light-400: #cfcfcf;
+    --background-color-light-300: #c7c7c7;
+    --background-color-light-200: #bfbfbf;
+    --background-color-light-100: #b8b8b8;
+    --background-color-light-000: #b0b0b0;
+    --responsive-size-icon: clamp(20px, 3vw, 80px);
+    --responsive-gap-li: clamp(5px, 2vw, 80px);
+    --padding-component: calc(1rem + 3vw);
+    --primary-color-light: hsl(207, 100%, 45%);
+    --primary-color-dark: hsl(207, 100%, 55%);
+    --secondary-color-light: hsl(27, 100%, 45%);
+    --secondary-color-dark: hsl(27, 100%, 60%);
+    --primary-color-background-light: hsl(207, 100%, 45%, 0.15);
+    --primary-color-background-dark: hsl(207, 100%, 35%, 0.15);
 }
+
+/** Global Dark Mode Settings*/
 .dark-mode {
-   .is__light {
-      display: none;
-   }
-   --background-body: var(--background-body-dark);
-   --background-color: var(--background-color-dark);
-   --font-color: var(--font-color-light);
-   --img-invert: var(--img-invert--light);
-   --background-color-1000: var(--background-color-dark-1000);
-   --background-color-900: var(--background-color-dark-900);
-   --background-color-800: var(--background-color-dark-800);
-   --background-color-700: var(--background-color-dark-700);
-   --background-color-600: var(--background-color-dark-600);
-   --background-color-500: var(--background-color-dark-500);
-   --background-color-400: var(--background-color-dark-400);
-   --background-color-300: var(--background-color-dark-300);
-   --background-color-200: var(--background-color-dark-200);
-   --background-color-100: var(--background-color-dark-100);
-   --background-color-000: var(--background-color-dark-000);
+    .is__light {
+        display: none;
+    }
+    --background-body: var(--background-body-dark);
+    --background-color: var(--background-color-dark);
+    --background-color-inverted: var(--background-color-dark-inverted);
+    --font-color-inverted: var(--font-color-light-inverted);
+    --font-color: var(--font-color-light);
+    --img-invert: var(--img-invert--light);
+    --background-color-1000: var(--background-color-dark-1000);
+    --background-color-900: var(--background-color-dark-900);
+    --background-color-800: var(--background-color-dark-800);
+    --background-color-700: var(--background-color-dark-700);
+    --background-color-600: var(--background-color-dark-600);
+    --background-color-500: var(--background-color-dark-500);
+    --background-color-400: var(--background-color-dark-400);
+    --background-color-300: var(--background-color-dark-300);
+    --background-color-200: var(--background-color-dark-200);
+    --background-color-100: var(--background-color-dark-100);
+    --background-color-000: var(--background-color-dark-000);
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+    --primary-color-background: var(--primary-color-background-dark);
 }
+
+/** Global Light Mode Settings*/
 .light-mode {
-   .is__dark {
-      display: none;
-   }
-   --background-body: var(--background-body-light);
-   --background-color: var(--background-color-light);
-   --font-color: var(--font-color-dark);
-   --img-invert: var(--img-invert--dark);
-   --background-color-1000: var(--background-color-light-1000);
-   --background-color-900: var(--background-color-light-900);
-   --background-color-800: var(--background-color-light-800);
-   --background-color-700: var(--background-color-light-700);
-   --background-color-600: var(--background-color-light-600);
-   --background-color-500: var(--background-color-light-500);
-   --background-color-400: var(--background-color-light-400);
-   --background-color-300: var(--background-color-light-300);
-   --background-color-200: var(--background-color-light-200);
-   --background-color-100: var(--background-color-light-100);
-   --background-color-000: var(--background-color-light-000);
+    .is__dark {
+        display: none;
+    }
+    --background-body: var(--background-body-light);
+    --background-color: var(--background-color-light);
+    --background-color-inverted: var(--background-color-light-inverted);
+    --font-color-inverted: var(--font-color-dark-inverted);
+    --font-color: var(--font-color-dark);
+    --img-invert: var(--img-invert--dark);
+    --background-color-1000: var(--background-color-light-1000);
+    --background-color-900: var(--background-color-light-900);
+    --background-color-800: var(--background-color-light-800);
+    --background-color-700: var(--background-color-light-700);
+    --background-color-600: var(--background-color-light-600);
+    --background-color-500: var(--background-color-light-500);
+    --background-color-400: var(--background-color-light-400);
+    --background-color-300: var(--background-color-light-300);
+    --background-color-200: var(--background-color-light-200);
+    --background-color-100: var(--background-color-light-100);
+    --background-color-000: var(--background-color-light-000);
+    --primary-color: var(--primary-color-light);
+    --secondary-color: var(--secondary-color-light);
+    --primary-color-background: var(--primary-color-background-light);
 }
-body {
-   height: 100vh;
+
+/** Global Color Palette Settings */
+.is__primary__color {
+    color: var(--primary-color);
 }
+.is__secondary__color {
+    color: var(--secondary-color);
+}
+
+/** Application Styling */
 .app__container {
-   height: 100%;
-   background-color: var(--background-body);
-   transition: 0.25s ease-in-out;
+    background-color: var(--background-body);
+    transition: 0.25s ease-in-out;
 }
 .app__sidebar {
-   position: relative;
-   width: 25%;
-   height: 100%;
-   padding: 1rem;
+    position: relative;
+    width: 25%;
+    height: 100%;
+    padding: 1rem;
 }
 .app__dashboard {
-   width: 75%;
-   padding: 1rem;
-   height: 100%;
+    width: 75%;
+    padding: 1rem;
+    height: 100%;
 }
 button {
-   background: transparent;
+    background: transparent;
 }
 .dark-mode-button img {
-   height: 30px;
-   aspect-ratio: 1/1;
-   filter: invert(var(--img-invert));
+    height: 30px;
+    aspect-ratio: 1/1;
+    filter: invert(var(--img-invert));
+}
+
+@media (width >= 768px) {
+    .is__desktop {
+        display: block;
+    }
+    .is__mobile {
+        display: none;
+    }
 }
