@@ -9,23 +9,23 @@ import Register from "./LandingContent/Register";
 import LandingFooter from "./LandingFooter/LandingFooter";
 // eslint-disable-next-line react/prop-types
 const LandingPage = ({ isDarkMode, toggleDarkMode }) => {
-    return (
-        <>
-            <LandingHeader
-                isDarkMode={isDarkMode}
-                toggleDarkMode={toggleDarkMode}
-            />
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/products" element={<ProductsPage />} />
-                <Route path="/pricing" element={<PricingPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-            </Routes>
-            <LandingFooter />
-        </>
-    );
+   return (
+      <>
+         <LandingHeader
+            isDarkMode={isDarkMode}
+            toggleDarkMode={toggleDarkMode}
+         />
+         <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+         </Routes>
+         <LandingFooter />
+      </>
+   );
 };
 
 export default LandingPage;
