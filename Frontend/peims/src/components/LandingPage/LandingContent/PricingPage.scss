@@ -1,0 +1,229 @@
+.pricing__container {
+    font-size: clamp(0.8rem, 0.4rem + 0.8vw, 1.6rem);
+    color: var(--font-color);
+    filter: opacity(95%);
+    display: flex;
+    flex-direction: column;
+    margin: 4vw calc(1rem + 3vw);
+    gap: calc(60px + 1vw);
+}
+.check__icon,
+.block__icon {
+    display: grid;
+    place-items: center;
+    width: calc(20px + 1vw);
+    aspect-ratio: 1/1;
+}
+.pricing__pick {
+    display: flex;
+    flex-direction: column;
+    gap: calc(50px + 5vw);
+    justify-content: center;
+    text-align: center;
+}
+.pricing__title {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    h1 {
+        font-size: 3em;
+    }
+    p {
+        max-width: 70%;
+    }
+}
+.pricing__variety {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(100px + 10vw);
+    height: 300px;
+}
+.pricing__annually,
+.pricing__monthly {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    height: 10vw;
+}
+.pricing__annually__box,
+.pricing__monthly__box {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    border-style: solid;
+    padding: 1rem;
+    border-width: 4px 4px 4px 0px;
+}
+.pricing__annually__box {
+    border-color: var(--primary-color-background);
+    box-shadow: -3px 0 var(--primary-color);
+}
+.pricing__monthly__box {
+    border-color: hsl(0, 0%, 50%, 0.15);
+    box-shadow: -3px 0 gray;
+}
+.pricing__choose {
+    display: flex;
+    gap: calc(10px + 0.1vw);
+    input[type="radio"] {
+        width: 20px;
+    }
+}
+.pricing__annually__checkbox,
+.pricing__monthly__checkbox {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    padding: 1rem;
+    gap: calc(10px + 0.1vw);
+    p {
+        font-size: 0.6em;
+    }
+}
+.pricing__desc--1 {
+    text-align: left;
+    h5 {
+        color: var(--tertiary-color);
+        font-size: 0.75em;
+    }
+}
+.pricing__desc--2 {
+    text-align: right;
+    h4 {
+        font-weight: 500;
+    }
+    span {
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+    h5 {
+        font-weight: 400;
+    }
+}
+.pricing__table {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin: 1rem;
+    padding: 1em 0;
+}
+.pricing__table__display {
+    width: 90%;
+    height: 500px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid gray;
+    border-spacing: 0px;
+    color: var(--font-color);
+}
+tr {
+    border-radius: 20px;
+    padding: 0;
+}
+.border__to__right {
+    border-left: 3px solid var(--primary-color);
+    border-right: 3px solid var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 800;
+}
+th,
+td {
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 0.4em;
+}
+td {
+    font-size: 0.75em;
+}
+table tr:last-child td:last-child {
+    border-top: 0;
+    border-left: 3px solid var(--primary-color);
+    border-radius: 0 0 15px 0;
+}
+table tr:last-child td:first-child {
+    border-left: 1px solid gray;
+    border-radius: 0 0 0 15px;
+}
+table tr:first-child th:first-child {
+    border-left: 1px solid gray;
+    border-radius: 15px 0 0 0;
+}
+table tr:last-child th:last-child {
+    border-top: 3px solid var(--primary-color);
+    border-radius: 0 15px 0 0;
+}
+
+.checked__props {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pricing__subscribe__now {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.pricing__subscribe--btn {
+    text-align: center;
+    width: 70%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 15px;
+}
+@media (width >= 425) {
+    .pricing__variety {
+        gap: calc(40px + 4vw);
+    }
+}
+@media (width >= 768px) {
+    .pricing__container {
+        gap: calc(10px + 1vw);
+    }
+    .pricing__variety {
+        gap: calc(20px + 2vw);
+    }
+    .pricing__annually,
+    .pricing__monthly {
+        width: 40%;
+    }
+    .pricing__annually__box,
+    .pricing__monthly__box {
+        height: 100px;
+    }
+    .pricing__table {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        margin: 4rem;
+    }
+    .pricing__pick {
+        gap: calc(50px + 5vw);
+    }
+    .pricing__table__display {
+        width: 70%;
+    }
+    th,
+    td {
+        padding: 1.4rem 0.2rem;
+    }
+    .pricing__subscribe__now {
+        width: 70%;
+        display: flex;
+        justify-content: end;
+    }
+    .pricing__subscribe--btn {
+        width: 20%;
+    }
+}

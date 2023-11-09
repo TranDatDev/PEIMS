@@ -2,7 +2,7 @@
 :root {
     font-family: "Inter", sans-serif;
     --background-body-dark: #1e1e1e;
-    --background-body-light: #ededed;
+    --background-body-light: #f3f3f3;
     --background-color-dark: #0f0f0f;
     --background-color-light: #ebebeb;
     --background-color-dark-inverted: #ebebeb;
@@ -41,7 +41,9 @@
     --primary-color-light: hsl(207, 100%, 45%);
     --primary-color-dark: hsl(207, 100%, 55%);
     --secondary-color-light: hsl(27, 100%, 45%);
-    --secondary-color-dark: hsl(27, 100%, 60%);
+    --secondary-color-dark: hsl(27, 100%, 55%);
+    --tertiary-color-light: hsl(357, 100%, 45%);
+    --tertiary-color-dark: hsl(357, 100%, 55%);
     --primary-color-background-light: hsl(207, 100%, 45%, 0.15);
     --primary-color-background-dark: hsl(207, 100%, 35%, 0.15);
 }
@@ -70,6 +72,7 @@
     --background-color-000: var(--background-color-dark-000);
     --primary-color: var(--primary-color-dark);
     --secondary-color: var(--secondary-color-dark);
+    --tertiary-color: var(--tertiary-color-dark);
     --primary-color-background: var(--primary-color-background-dark);
 }
 
@@ -97,6 +100,7 @@
     --background-color-000: var(--background-color-light-000);
     --primary-color: var(--primary-color-light);
     --secondary-color: var(--secondary-color-light);
+    --tertiary-color: var(--tertiary-color-light);
     --primary-color-background: var(--primary-color-background-light);
 }
 
@@ -107,7 +111,9 @@
 .is__secondary__color {
     color: var(--secondary-color);
 }
-
+.is__tertiary__color {
+    color: var(--tertiary-color);
+}
 /** Application Styling */
 .app__container {
     background-color: var(--background-body);
