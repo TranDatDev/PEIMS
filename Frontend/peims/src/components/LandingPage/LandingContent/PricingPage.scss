@@ -15,6 +15,7 @@
     aspect-ratio: 1/1;
 }
 .pricing__pick {
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     gap: calc(50px + 5vw);
@@ -188,7 +189,7 @@ table tr:last-child th:last-child {
 }
 @media (width >= 768px) {
     .pricing__container {
-        gap: calc(10px + 1vw);
+        gap: calc(20px + 2vw);
     }
     .pricing__variety {
         gap: calc(20px + 2vw);
