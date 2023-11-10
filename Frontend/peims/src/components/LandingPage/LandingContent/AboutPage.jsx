@@ -1,7 +1,13 @@
-import React from "react";
-
+import PositionedMenu from "../LandingHeader/PositionedMenu";
 const AboutPage = () => {
-   return <div>AboutPage</div>;
+    return (
+        <>
+            <div>
+                <PositionedMenu />
+                <h1>aaa</h1>
+            </div>
+        </>
+    );
 };
 
 export default AboutPage;

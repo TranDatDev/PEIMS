@@ -4,7 +4,7 @@
 }
 @mixin padding-default {
     $padding-calc: calc(1rem + 3vw);
-    padding: 1.25vw $padding-calc;
+    padding: calc(1rem + 1vw) $padding-calc;
 }
 @mixin flex-row {
     display: flex;
@@ -55,6 +55,10 @@ p {
         height: var(--responsive-size-icon);
         filter: invert(var(--img-invert));
     }
+}
+.landing__links {
+    text-decoration: none;
+    color: #000;
 }
 @media (1024px <= width) {
     .landing__link:hover {

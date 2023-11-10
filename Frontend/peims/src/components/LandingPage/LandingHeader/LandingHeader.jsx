@@ -5,6 +5,7 @@ import utils from "../../../assets/utils.png";
 import DarkLogo from "../../../assets/DarkPeims.svg";
 import LightLogo from "../../../assets/LightPeims.svg";
 import DarkModeButton from "../../DarkModeButton";
+import PositionedMenu from "./PositionedMenu";
 // eslint-disable-next-line react/prop-types
 
 const LandingHeader = ({ isDarkMode, toggleDarkMode }) => {
@@ -28,24 +29,11 @@ const LandingHeader = ({ isDarkMode, toggleDarkMode }) => {
                         </p>
                     </section>
                     <nav className="landing__nav--mobile is__mobile">
-                        <Link to="/login">login</Link>
-                        <Link to="/register">register</Link>
                         <DarkModeButton
                             isDarkMode={isDarkMode}
                             toggleDarkMode={toggleDarkMode}
                         />
-                        <Link to="/">
-                            <img src={home} alt="a" />
-                        </Link>
-                        <Link to="/products">
-                            <img src={utils} alt="b" />
-                        </Link>
-                        <Link to="/pricing">
-                            <img src="" alt="c" />
-                        </Link>
-                        <Link to="/about">
-                            <img src="" alt="c" />
-                        </Link>
+                        <PositionedMenu />
                         {/* <div className="landing__login--btn">
                             <p>Đăng nhập</p>
                         </div> */}
