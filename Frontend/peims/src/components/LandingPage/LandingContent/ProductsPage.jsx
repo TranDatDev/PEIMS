@@ -1,7 +1,15 @@
-
-
 const ProductsPage = () => {
-   return <div>ProductsPage</div>;
+   return (
+      <>
+         <section className="product__container">
+            <div>aaaa</div>
+            <div>aaaa</div>
+            <div>aaaa</div>
+            <div>aaaa</div>
+            <div>aaaa</div>
+         </section>
+      </>
+   );
 };
 
 export default ProductsPage;

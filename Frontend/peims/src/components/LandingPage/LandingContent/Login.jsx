@@ -1,8 +1,20 @@
 import React from "react";
 import "./Login.scss";
 import LoginLight from "../../../assets/LoginLight.png";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
+import Swal from "sweetalert2";
 const Login = () => {
+   const handleClick = () => {
+      Swal.fire({
+         title: "Cảm ơn bạn đã sử dụng PEIMS!",
+         text: "Đăng nhập thành công!",
+         icon: "success",
+      });
+      setTimeout(() => {
+         // Redirect về trang login
+         window.location.href = "/login";
+      }, 1000);
+   };
    return (
       <section className="login__container">
          <div className="login__instance--1">
@@ -45,7 +57,9 @@ const Login = () => {
             </div>
             <div className="login__submit">
                <div className="login__button">
-                  <h3>Login</h3>
+                  <h3>
+                     <button onClick={handleClick}>Login</button>
+                  </h3>
                </div>
                <div className="login__extend__register">
                   <p>
