@@ -1,0 +1,124 @@
+$padding-lr: 5vw calc(1rem + 3vw);
+.product__container {
+    color: var(--font-color);
+    font-size: clamp(0.8rem, 0.4rem + 1vw, 1.6rem);
+}
+.product__container > *:not(:first-child) {
+    font-size: 0.6em;
+    padding: $padding-lr;
+}
+.product__container svg {
+    width: calc(10px + 1vw);
+}
+.product__showcase {
+    display: none;
+}
+.prouduct__img {
+    width: 60%;
+    filter: brightness(98%);
+    object-fit: cover;
+}
+.product__instance--1 {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    text-align: center;
+    gap: 3vw;
+    padding: 5vw 0;
+}
+.product__instance--1 article {
+    max-width: 70%;
+    h1 {
+        font-size: 2em;
+    }
+    h6 {
+        font-weight: 400;
+    }
+}
+.home__get__started {
+    padding: calc(1px + 0.5vw);
+}
+.product__instance__described {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+.product__instance--2 {
+    background-color: var(--primary-color-background);
+}
+.product__instance--3 {
+    flex-direction: row-reverse;
+}
+.product__instance--4 {
+    background-color: var(--secondary-color-background);
+}
+.product__instance--5 {
+    flex-direction: row-reverse;
+}
+.product__details {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+.product__detail--1 {
+    h6 {
+        font-size: 0.6em;
+        font-weight: 300;
+    }
+    h1 {
+        font-size: 3em;
+    }
+}
+.product__detail--2 {
+    display: flex;
+    h3 {
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+    h5 {
+        max-width: 50%;
+        font-size: 0.8em;
+        font-weight: 300;
+    }
+}
+.product__traits {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    > * {
+        display: inherit;
+        align-items: start;
+        gap: 0.5vw;
+    }
+}
+.product__trait__display {
+    * {
+        margin: 0.25vw 0;
+    }
+}
+@media (width >= 768px) {
+    .product__container > *:not(:first-child) {
+        font-size: 0.8em;
+        padding: $padding-lr;
+    }
+    .product__instance__described {
+        justify-content: space-between;
+        > * {
+            width: 50%;
+        }
+    }
+    .product__instance--1 {
+        gap: 1.5vw;
+    }
+    .product__instance--1 article {
+        h1 {
+            font-size: 3.5em;
+        }
+    }
+    .product__showcase {
+        display: flex;
+    }
+    .is__end {
+        justify-content: end;
+    }
+}

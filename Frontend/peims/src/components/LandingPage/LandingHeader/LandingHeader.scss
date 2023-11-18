@@ -60,7 +60,13 @@ p {
     text-decoration: none;
     color: #000;
 }
+.is__tablet {
+    display: flex;
+}
 @media (1024px <= width) {
+    .is__tablet {
+        display: none;
+    }
     .landing__link:hover {
         background-color: var(--background-color-800);
     }
@@ -69,11 +75,11 @@ p {
         gap: 20px;
         align-items: center;
         @mixin btn {
-            min-height: 50px;
-            min-width: 100px;
+            min-height: 40px;
+            min-width: 80px;
             border: 2px solid var(--font-color);
-            border-radius: 15px;
-            padding: 1px 15px;
+            border-radius: 10px;
+            padding: 1px 10px;
             filter: opacity(60%);
             a {
                 text-decoration: none;

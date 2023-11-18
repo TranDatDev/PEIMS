@@ -46,6 +46,8 @@
     --tertiary-color-dark: hsl(357, 100%, 55%);
     --primary-color-background-light: hsl(207, 100%, 45%, 0.15);
     --primary-color-background-dark: hsl(207, 100%, 35%, 0.15);
+    --secondary-color-background-light: hsl(27, 100%, 45%, 0.15);
+    --secondary-color-background-dark: hsl(27, 100%, 35%, 0.15);
 }
 
 /** Global Dark Mode Settings*/
@@ -74,6 +76,7 @@
     --secondary-color: var(--secondary-color-dark);
     --tertiary-color: var(--tertiary-color-dark);
     --primary-color-background: var(--primary-color-background-dark);
+    --secondary-color-background: var(--secondary-color-background-dark);
 }
 
 /** Global Light Mode Settings*/
@@ -102,6 +105,7 @@
     --secondary-color: var(--secondary-color-light);
     --tertiary-color: var(--tertiary-color-light);
     --primary-color-background: var(--primary-color-background-light);
+    --secondary-color-background: var(--secondary-color-background-light);
 }
 
 /** Global Color Palette Settings */

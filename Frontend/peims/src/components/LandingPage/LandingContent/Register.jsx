@@ -1,4 +1,3 @@
-import React from "react";
 import "./Register.scss";
 import RegisterLight from "../../../assets/RegisterLight.png";
 import { Link } from "react-router-dom";
