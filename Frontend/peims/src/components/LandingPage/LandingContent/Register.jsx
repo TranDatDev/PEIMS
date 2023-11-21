@@ -1,19 +1,43 @@
+import React, { useState } from "react";
 import "./Register.scss";
 import RegisterLight from "../../../assets/RegisterLight.png";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import Swal from "sweetalert2";
+
 const Register = () => {
-   const handleClick = () => {
-      Swal.fire({
-         title: "Cảm ơn bạn đã sử dụng PEIMS!",
-         text: "Đăng nhập thành công!",
-         icon: "success",
-      });
-      setTimeout(() => {
-         // Redirect về trang login
-         window.location.href = "/login";
-      }, 1500);
+   const [username, setUsername] = useState("");
+   const [password, setPassword] = useState("");
+
+   const handleClick = async () => {
+      try {
+         // Gửi yêu cầu đăng ký đến API của bạn ở đây
+         const response = await axios.post("http://localhost:8000/register/", {
+            customer_username: username,
+            customer_password: password,
+         });
+
+         // Xử lý thành công đăng ký ở đây
+         Swal.fire({
+            title: "Cảm ơn bạn đã sử dụng PEIMS!",
+            text: "Đăng ký thành công!",
+            icon: "success",
+         });
+
+         // Redirect về trang login (hoặc trang khác nếu cần)
+         setTimeout(() => {
+            window.location.href = "/login";
+         }, 1500);
+      } catch (error) {
+         // Xử lý lỗi đăng ký ở đây
+         Swal.fire({
+            title: "Đăng ký thất bại",
+            text: "Vui lòng kiểm tra lại thông tin đăng ký",
+            icon: "error",
+         });
+      }
    };
+
    return (
       <section className="register__container">
          <div className="register__instance--1">
@@ -35,22 +59,10 @@ const Register = () => {
                         type="text"
                         id="username"
                         name="username"
-                        placeholder="mail@gmail.com"
+                        placeholder="Enter your username"
                         className="register__input"
-                     />
-                  </div>
-               </div>
-               <div className="register__mail">
-                  <h2 className="register__mail__title">
-                     Email Address <span>*</span>
-                  </h2>
-                  <div className="register__username__box">
-                     <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        placeholder="mail@gmail.com"
-                        className="register__input"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                      />
                   </div>
                </div>
@@ -58,17 +70,17 @@ const Register = () => {
                   <h2 className="register__password__title">
                      Password <span>*</span>
                   </h2>
-                  <p className="register__password__box">
-                     <div className="register__username__box">
-                        <input
-                           type="text"
-                           id="username"
-                           name="username"
-                           placeholder="mail@gmail.com"
-                           className="register__input"
-                        />
-                     </div>
-                  </p>
+                  <div className="register__username__box">
+                     <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        className="register__input"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                     />
+                  </div>
                </div>
             </div>
             <div className="register__submit">

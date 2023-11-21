@@ -1,20 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.scss";
 import LoginLight from "../../../assets/LoginLight.png";
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+import axios from "axios";
 import Swal from "sweetalert2";
+
 const Login = () => {
-   const handleClick = () => {
-      Swal.fire({
-         title: "Cảm ơn bạn đã sử dụng PEIMS!",
-         text: "Đăng nhập thành công!",
-         icon: "success",
-      });
-      setTimeout(() => {
-         // Redirect về trang login
-         window.location.href = "/login";
-      }, 1000);
+   const [username, setUsername] = useState("");
+   const [password, setPassword] = useState("");
+
+   const handleClick = async () => {
+      try {
+         const response = await axios.post("http://localhost:8000/login/", {
+            customer_username: username,
+            customer_password: password,
+         });
+
+         // Xử lý thành công đăng nhập ở đây
+         console.log(response.data.message);
+         Swal.fire({
+            title: "Cảm ơn bạn đã sử dụng PEIMS!",
+            text: response.data.message,
+            icon: "success",
+         });
+
+         // Redirect hoặc thực hiện các hành động khác sau khi đăng nhập thành công
+      } catch (error) {
+         // Xử lý lỗi đăng nhập ở đây
+         console.error("Đăng nhập thất bại:", error.response.data.error);
+         Swal.fire({
+            title: "Đăng nhập thất bại",
+            text: "Vui lòng kiểm tra lại thông tin đăng nhập",
+            icon: "error",
+         });
+      }
    };
+
    return (
       <section className="login__container">
          <div className="login__instance--1">
@@ -34,6 +55,8 @@ const Login = () => {
                         name="username"
                         placeholder="mail@gmail.com"
                         className="login__input"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                      />
                   </div>
                </div>
@@ -44,11 +67,13 @@ const Login = () => {
                   <p className="login__password__box">
                      <div className="login__username__box">
                         <input
-                           type="text"
-                           id="username"
-                           name="username"
-                           placeholder="mail@gmail.com"
+                           type="password"
+                           id="password"
+                           name="password"
+                           placeholder="Enter your password"
                            className="login__input"
+                           value={password}
+                           onChange={(e) => setPassword(e.target.value)}
                         />
                      </div>
                   </p>
