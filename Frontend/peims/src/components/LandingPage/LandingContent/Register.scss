@@ -46,7 +46,8 @@ h2 > span {
    flex-direction: column;
    gap: calc(5px + 0.8vw);
 }
-.register__input[type="text"] {
+.register__input[type="text"],
+.register__input[type="password"] {
    width: 100%;
    background: transparent;
    border-radius: 25px;
@@ -99,7 +100,8 @@ h2 > span {
          font-size: 0.8em;
       }
    }
-   .register__input[type="text"] {
+   .register__input[type="text"],
+   .register__input[type="password"] {
       padding: 1rem;
    }
    .register__instance--2 {

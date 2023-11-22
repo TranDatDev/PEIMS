@@ -4,9 +4,9 @@ import HomePage from "./LandingContent/HomePage";
 import ProductsPage from "./LandingContent/ProductsPage";
 import PricingPage from "./LandingContent/PricingPage";
 import AboutPage from "./LandingContent/AboutPage";
+import LandingFooter from "./LandingFooter/LandingFooter";
 import Login from "./LandingContent/Login";
 import Register from "./LandingContent/Register";
-import LandingFooter from "./LandingFooter/LandingFooter";
 // eslint-disable-next-line react/prop-types
 const LandingPage = ({ isDarkMode, toggleDarkMode }) => {
    return (

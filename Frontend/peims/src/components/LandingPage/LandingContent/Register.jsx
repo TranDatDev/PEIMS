@@ -11,28 +11,27 @@ const Register = () => {
 
    const handleClick = async () => {
       try {
-         // Gửi yêu cầu đăng ký đến API của bạn ở đây
+         // Gửi yêu cầu đăng ký về API của Django port 8000
          const response = await axios.post("http://localhost:8000/register/", {
             customer_username: username,
             customer_password: password,
          });
 
-         // Xử lý thành công đăng ký ở đây
+         // Nếu đăng ký thành công
          Swal.fire({
             title: "Cảm ơn bạn đã sử dụng PEIMS!",
             text: "Đăng ký thành công!",
             icon: "success",
+         }).then((result) => {
+            if (result.isConfirmed) {
+               window.location.href = "/login";
+            }
          });
-
-         // Redirect về trang login (hoặc trang khác nếu cần)
-         setTimeout(() => {
-            window.location.href = "/login";
-         }, 1500);
       } catch (error) {
-         // Xử lý lỗi đăng ký ở đây
+         // Xử lý lỗi đăng ký
          Swal.fire({
             title: "Đăng ký thất bại",
-            text: "Vui lòng kiểm tra lại thông tin đăng ký",
+            text: "Tài khoản này hiện đã tồn tại",
             icon: "error",
          });
       }
@@ -79,6 +78,20 @@ const Register = () => {
                         className="register__input"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                     />
+                  </div>
+               </div>
+               <div className="register__password">
+                  <h2 className="register__password__title">
+                     Confirm Password <span>*</span>
+                  </h2>
+                  <div className="register__username__box">
+                     <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Confirm your password"
+                        className="register__input"
                      />
                   </div>
                </div>

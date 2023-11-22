@@ -50,7 +50,8 @@ h2 > span {
    color: var(--primary-color);
    text-align: right;
 }
-.login__input[type="text"] {
+.login__input[type="text"],
+.login__input[type="password"] {
    width: 100%;
    background: transparent;
    border-radius: 25px;
@@ -102,7 +103,8 @@ h2 > span {
          font-size: 0.8em;
       }
    }
-   .login__input[type="text"] {
+   .login__input[type="text"],
+   .login__input[type="password"] {
       padding: 1rem;
    }
    .login__instance--2 {

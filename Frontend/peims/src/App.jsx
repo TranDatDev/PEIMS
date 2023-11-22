@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import classnames from "classnames";
 import { useState } from "react";
 import LandingPage from "./components/LandingPage/LandingPage";
+import MainPage from "./components/MainPage/MainPage";
 function App() {
    const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -18,10 +19,18 @@ function App() {
                   isDarkMode ? "dark-mode" : "light-mode"
                )}
             >
-               <LandingPage
-                  isDarkMode={isDarkMode}
-                  toggleDarkMode={toggleDarkMode}
-               />
+               <Routes>
+                  <Route
+                     path="*"
+                     element={
+                        <LandingPage
+                           isDarkMode={isDarkMode}
+                           toggleDarkMode={toggleDarkMode}
+                        />
+                     }
+                  />
+                  <Route path="/main" element={<MainPage />} />
+               </Routes>
             </div>
          </Router>
       </>
