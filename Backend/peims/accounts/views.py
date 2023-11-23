@@ -8,7 +8,6 @@ from rest_framework import status
 from .models import Customer
 
 
-
 class CustomerViewset(viewsets.ViewSet):
     permission_classes = [permissions.AllowAny]
     queryset = Customer.objects.all()
@@ -57,6 +56,7 @@ class RegisterView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 class LoginView(APIView):
     def post(self, request):
         # Nhận thông tin đăng nhập từ request
@@ -65,7 +65,8 @@ class LoginView(APIView):
 
         # Kiểm tra xem có thông tin đăng nhập không
         if username is None or password is None:
-            return Response({'error': 'Vui lòng cung cấp tên người dùng và mật khẩu'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Vui lòng cung cấp tên người dùng và mật khẩu'},
+                            status=status.HTTP_400_BAD_REQUEST)
 
         # Kiểm tra xem có người dùng nào có thông tin đăng nhập như vậy không
         try:
@@ -75,3 +76,22 @@ class LoginView(APIView):
 
         # Trả về thông tin người dùng
         return Response({'user_id': user.id, 'username': user.customer_username}, status=status.HTTP_200_OK)
+
+
+class MainView(APIView):
+    def post(self, request):
+        # Nhận id từ request
+        id = request.data.get('id')
+
+        # Kiểm tra xem có id không
+        if id is None:
+            return Response({'error': 'Vui lòng cung cấp id'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Tìm kiếm người dùng theo id
+        try:
+            user = Customer.objects.get(id=id)
+        except Customer.DoesNotExist:
+            return Response({'error': 'Người dùng không tồn tại'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Trả lại username
+        return Response({'username': user.customer_username}, status=status.HTTP_200_OK)

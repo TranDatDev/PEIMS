@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Login.scss";
 import LoginLight from "../../../assets/LoginLight.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
 const Login = () => {
    const [username, setUsername] = useState("");
    const [password, setPassword] = useState("");
-
+   const navigate = useNavigate();
    const handleClick = async () => {
       try {
          const response = await axios.post("http://localhost:8000/login/", {
@@ -17,16 +17,17 @@ const Login = () => {
          });
 
          // Xử lý thành công đăng nhập ở đây
-         console.log(response.data.message);
+         console.log(response.data.user_id);
          Swal.fire({
             title: "Cảm ơn bạn đã sử dụng PEIMS!",
             text: response.data.message,
             icon: "success",
+         }).then((result) => {
+            if (result.isConfirmed) {
+               navigate("/main/" + response.data.user_id);
+            }
          });
-
-         // Redirect hoặc thực hiện các hành động khác sau khi đăng nhập thành công
       } catch (error) {
-         // Xử lý lỗi đăng nhập ở đây
          console.error("Đăng nhập thất bại:", error.response.data.error);
          Swal.fire({
             title: "Đăng nhập thất bại",
@@ -35,7 +36,6 @@ const Login = () => {
          });
       }
    };
-
    return (
       <section className="login__container">
          <div className="login__instance--1">

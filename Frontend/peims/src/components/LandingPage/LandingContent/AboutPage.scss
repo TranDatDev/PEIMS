@@ -1,0 +1,11 @@
+:root {
+   --pi: 3.14159265359;
+   --e: 2.71828182846;
+   --sqrt-vw: pow(1vw, 0.5);
+   --font-size-resp: calc(var(--pi) / var(--e) * 10vw);
+}
+.about__container {
+   h1 {
+      font-size: calc(10px * pow(5*1vw, 2));
+   }
+}

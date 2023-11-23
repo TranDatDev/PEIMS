@@ -29,7 +29,7 @@ function App() {
                         />
                      }
                   />
-                  <Route path="/main" element={<MainPage />} />
+                  <Route path="/main/:id" element={<MainPage />} />
                </Routes>
             </div>
          </Router>
