@@ -65,14 +65,14 @@ class LoginView(APIView):
 
         # Kiểm tra xem có thông tin đăng nhập không
         if username is None or password is None:
-            return Response({'error': 'Vui lòng cung cấp tên người dùng và mật khẩu'},
+            return Response({'error': 'Please provide your username and password'},
                             status=status.HTTP_400_BAD_REQUEST)
 
         # Kiểm tra xem có người dùng nào có thông tin đăng nhập như vậy không
         try:
             user = Customer.objects.get(customer_username=username, customer_password=password)
         except Customer.DoesNotExist:
-            return Response({'error': 'Thông tin đăng nhập không chính xác'}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({'error': 'Login information is incorrect'}, status=status.HTTP_401_UNAUTHORIZED)
 
         # Trả về thông tin người dùng
         return Response({'user_id': user.id, 'username': user.customer_username}, status=status.HTTP_200_OK)
@@ -85,13 +85,34 @@ class MainView(APIView):
 
         # Kiểm tra xem có id không
         if id is None:
-            return Response({'error': 'Vui lòng cung cấp id'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Please provide your id'}, status=status.HTTP_400_BAD_REQUEST)
 
         # Tìm kiếm người dùng theo id
         try:
             user = Customer.objects.get(id=id)
         except Customer.DoesNotExist:
-            return Response({'error': 'Người dùng không tồn tại'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'error': 'User does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
         # Trả lại username
         return Response({'username': user.customer_username}, status=status.HTTP_200_OK)
+
+
+class CustomerDeleteView(APIView):
+    def post(self, request):
+        # Nhận id từ request
+        id = request.data.get('id')
+
+        # Kiểm tra xem có id không
+        if id is None:
+            return Response({'error': 'Please provide your id'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Tìm kiếm người dùng theo id
+        try:
+            user = Customer.objects.get(id=id)
+            user.delete()
+            # Xóa người dùng theo id
+        except Customer.DoesNotExist:
+            return Response({'error': 'User does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Trả lại thông báo
+        return Response({'message': 'Your account has been deleted from the database'}, status=status.HTTP_200_OK)

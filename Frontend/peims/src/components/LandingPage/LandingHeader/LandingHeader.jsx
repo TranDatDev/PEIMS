@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import "./LandingHeader.scss";
-import DarkLogo from "../../../assets/DarkPeims.svg";
-import LightLogo from "../../../assets/LightPeims.svg";
-import DarkModeButton from "../../DarkModeButton";
-import PositionedMenu from "./PositionedMenu";
+import { Link } from 'react-router-dom';
+import './LandingHeader.scss';
+import DarkLogo from '../../../assets/DarkPeims.svg';
+import LightLogo from '../../../assets/LightPeims.svg';
+import DarkModeButton from '../../DarkModeButton';
+import PositionedMenu from './PositionedMenu';
 // eslint-disable-next-line react/prop-types
 const LandingHeader = ({ isDarkMode, toggleDarkMode }) => {
     return (
@@ -11,25 +11,12 @@ const LandingHeader = ({ isDarkMode, toggleDarkMode }) => {
             <header>
                 <div className="landing__header__container">
                     <section className="landing__logo__title">
-                        <img
-                            src={LightLogo}
-                            alt=""
-                            className="landing__logo is__light"
-                        />
-                        <img
-                            src={DarkLogo}
-                            alt=""
-                            className="landing__logo is__dark"
-                        />
-                        <p className="landing__logo__title is__desktop">
-                            PEIMS
-                        </p>
+                        <img src={LightLogo} alt="" className="landing__logo is__light" />
+                        <img src={DarkLogo} alt="" className="landing__logo is__dark" />
+                        <p className="landing__logo__title is__desktop">PEIMS</p>
                     </section>
                     <nav className="landing__nav--mobile is__mobile is__tablet">
-                        <DarkModeButton
-                            isDarkMode={isDarkMode}
-                            toggleDarkMode={toggleDarkMode}
-                        />
+                        <DarkModeButton isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
                         <PositionedMenu />
                         {/* <div className="landing__login--btn">
                             <p>Đăng nhập</p>
@@ -52,10 +39,7 @@ const LandingHeader = ({ isDarkMode, toggleDarkMode }) => {
                         </ul>
                     </nav>
                     <div className="landing__login is__desktop">
-                        <DarkModeButton
-                            isDarkMode={isDarkMode}
-                            toggleDarkMode={toggleDarkMode}
-                        />
+                        <DarkModeButton isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
                         <button className="landing__login--btn">
                             <Link to="/login">Login</Link>
                         </button>

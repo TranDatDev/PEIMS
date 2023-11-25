@@ -1,115 +1,119 @@
 @mixin flex-row {
-   display: flex;
-   flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 .register__instance--2 {
-   display: none;
+    display: none;
 }
 .register__container {
-   @include flex-row();
-   flex-direction: row-reverse;
-   font-size: clamp(0.8rem, 0.4rem + 1vw, 1.6rem);
-   justify-content: space-around;
-   margin: 5vw calc(1rem + 3vw);
-   padding: 5rem 0;
-   color: var(--font-color);
+    @include flex-row();
+    flex-direction: row-reverse;
+    font-size: clamp(0.8rem, 0.4rem + 1vw, 1.6rem);
+    justify-content: space-around;
+    margin: 5vw calc(1rem + 3vw);
+    padding: 5rem 0;
+    color: var(--font-color);
 }
 
 .register__instance--1 {
-   display: flex;
-   flex-direction: column;
-   gap: calc(40px + 2vw);
-   width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: calc(40px + 2vw);
+    width: 80%;
 }
 
 .register__title {
-   h1 {
-      font-size: 3em;
-      line-height: 1.5em;
-   }
+    h1 {
+        font-size: 3em;
+        line-height: 1.5em;
+    }
 }
 .register__inputplace {
-   display: flex;
-   flex-direction: column;
-   gap: calc(20px + 1vw);
-   h2 {
-      font-size: 1.2em;
-   }
+    display: flex;
+    flex-direction: column;
+    gap: calc(20px + 1vw);
+    h2 {
+        font-size: 1.2em;
+    }
 }
 h2 > span {
-   color: red;
+    color: red;
 }
 .register__username,
 .register__mail,
 .register__password {
-   display: flex;
-   flex-direction: column;
-   gap: calc(5px + 0.8vw);
+    display: flex;
+    flex-direction: column;
+    gap: calc(5px + 0.8vw);
 }
-.register__input[type="text"],
-.register__input[type="password"] {
-   width: 100%;
-   background: transparent;
-   border-radius: 25px;
-   padding: 0.5rem;
-   border: 1px solid var(--font-color);
-   color: var(--font-color);
+.register__input[type='text'],
+.register__input[type='password'] {
+    width: 100%;
+    background: transparent;
+    border-radius: 25px;
+    padding: 0.5rem;
+    border: 1px solid var(--font-color);
+    color: var(--font-color);
 }
 .register__input::placeholder {
-   color: var(--font-color);
+    color: var(--font-color);
 }
 .register__input:focus {
-   background-color: var(--background-color-400);
-   border: 1px solid var(--primary-color);
+    background-color: var(--background-color-400);
+    border: 1px solid var(--primary-color);
 }
 
 .register__submit {
-   display: flex;
-   flex-direction: column;
-   text-align: center;
-   gap: calc(5px + 0.5vw);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: calc(5px + 0.5vw);
 }
 .register__button {
-   text-align: center;
-   background-color: var(--primary-color);
-   padding: 0.3rem;
-   border-radius: 30px;
-   h3 {
-      color: #fff;
-   }
-   filter: brightness(95%);
+    text-align: center;
+    background-color: var(--primary-color);
+    padding: 0.3rem;
+    border-radius: 30px;
+    h3 {
+        button {
+            color: #fff;
+            padding: 0.2rem;
+            margin-bottom: 0.2vw;
+        }
+    }
+    filter: brightness(95%);
 }
 .register__register__now {
-   a {
-      text-decoration: underline;
-      color: var(--primary-color);
-   }
+    a {
+        text-decoration: underline;
+        color: var(--primary-color);
+    }
 }
 
 @media (width >= 768px) {
-   .register__container {
-      padding: 0;
-   }
-   .register__instance--1 {
-      gap: calc(10px + 2vw);
-      width: 35%;
-   }
-   .register__inputplace {
-      gap: calc(5px + 1vw);
-      h2 {
-         font-size: 0.8em;
-      }
-   }
-   .register__input[type="text"],
-   .register__input[type="password"] {
-      padding: 1rem;
-   }
-   .register__instance--2 {
-      display: flex;
-      align-items: center;
-      img {
-         max-width: calc(300px + 15vw);
-         filter: contrast(90%);
-      }
-   }
+    .register__container {
+        padding: 0;
+    }
+    .register__instance--1 {
+        gap: calc(10px + 2vw);
+        width: 35%;
+    }
+    .register__inputplace {
+        gap: calc(5px + 1vw);
+        h2 {
+            font-size: 0.8em;
+        }
+    }
+    .register__input[type='text'],
+    .register__input[type='password'] {
+        padding: 1rem;
+    }
+    .register__instance--2 {
+        display: flex;
+        align-items: center;
+        img {
+            max-width: calc(300px + 15vw);
+            filter: contrast(90%);
+        }
+    }
 }
