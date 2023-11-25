@@ -19,8 +19,8 @@ const Register = () => {
 
          // Nếu đăng ký thành công
          Swal.fire({
-            title: "Cảm ơn bạn đã sử dụng PEIMS!",
-            text: "Đăng ký thành công!",
+            title: "Thank you for using PEIMS!",
+            text: "Register successfully!",
             icon: "success",
          }).then((result) => {
             if (result.isConfirmed) {
@@ -30,8 +30,8 @@ const Register = () => {
       } catch (error) {
          // Xử lý lỗi đăng ký
          Swal.fire({
-            title: "Đăng ký thất bại",
-            text: "Tài khoản này hiện đã tồn tại",
+            title: "Register failed!",
+            text: "This account already exists or is invalid",
             icon: "error",
          });
       }

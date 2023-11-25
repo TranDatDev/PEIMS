@@ -19,7 +19,7 @@ const Login = () => {
          // Xử lý thành công đăng nhập ở đây
          console.log(response.data.user_id);
          Swal.fire({
-            title: "Cảm ơn bạn đã sử dụng PEIMS!",
+            title: "Thank you for using PEIMS!",
             text: response.data.message,
             icon: "success",
          }).then((result) => {
@@ -28,10 +28,10 @@ const Login = () => {
             }
          });
       } catch (error) {
-         console.error("Đăng nhập thất bại:", error.response.data.error);
+         console.error("Login failed:", error.response.data.error);
          Swal.fire({
-            title: "Đăng nhập thất bại",
-            text: "Vui lòng kiểm tra lại thông tin đăng nhập",
+            title: "Login failed!",
+            text: "Please check again",
             icon: "error",
          });
       }
