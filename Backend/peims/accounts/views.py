@@ -98,7 +98,7 @@ class MainView(APIView):
 
 
 class CustomerDeleteView(APIView):
-    def post(self, request):
+    def post(self, abc):
         # Nhận id từ request
         id = request.data.get('id')
 
